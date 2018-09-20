@@ -541,8 +541,8 @@ PaError PaPulseAudio_StartStreamCb(
     {
         while (1)
         {
-            pa_threaded_mainloop_wait(l_ptrPulseAudioHostApi->mainloop);
             pa_threaded_mainloop_lock(l_ptrPulseAudioHostApi->mainloop);
+            pa_threaded_mainloop_wait(l_ptrPulseAudioHostApi->mainloop);
 
             if (stream->outStream != NULL)
             {
